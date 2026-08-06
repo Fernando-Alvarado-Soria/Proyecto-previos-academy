@@ -13,6 +13,9 @@ __pycache__/
 *.log
 *.tmp
 
+# Referencias locales
+imgContenedorConcepto.jpeg
+
 # Editores y sistema operativo
 .vscode/
 .idea/
