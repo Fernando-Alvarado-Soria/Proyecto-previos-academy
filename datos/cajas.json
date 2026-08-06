@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "aruco": 10,
+        "largo": 10,
+        "ancho": 5,
+        "alto": 5
+    },
+
+    {
+        "id": 2,
+        "aruco": 11,
+        "largo": 15,
+        "ancho": 6,
+        "alto": 5
+    },
+
+    {
+        "id": 3,
+        "aruco": 12,
+        "largo": 8,
+        "ancho": 8,
+        "alto": 5
+    },
+
+    {
+        "id": 4,
+        "aruco": 13,
+        "largo": 12,
+        "ancho": 4,
+        "alto": 5
+    }
+]
