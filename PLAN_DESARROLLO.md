@@ -26,13 +26,18 @@ SICCO busca apoyar ese proceso mediante vision artificial, registro de cajas y o
 
 Objetivo: dejar el proyecto listo para que cualquier integrante pueda instalarlo y ejecutarlo desde cero.
 
+Estado de checklist:
+
+- `[ ]` Pendiente.
+- `[x]` Completado.
+
 Tareas:
 
-- Crear `.gitignore` para evitar subir el entorno virtual y archivos temporales.
-- Crear `README.md` con guia de instalacion en Linux y Windows.
-- Crear `requirements.txt` con dependencias de Python.
-- Verificar ejecucion de `python main.py`.
-- Verificar prueba del optimizador con `python prueba_optimizador.py`.
+- [x] Crear `.gitignore` para evitar subir el entorno virtual y archivos temporales.
+- [x] Crear `README.md` con guia de instalacion en Linux y Windows.
+- [x] Crear `requirements.txt` con dependencias de Python.
+- [x] Verificar ejecucion de `python main.py`.
+- [ ] Verificar prueba del optimizador con `python prueba_optimizador.py`.
 
 Resultado esperado:
 
@@ -45,7 +50,7 @@ Estado actual:
 
 - `.gitignore` creado.
 - `README.md` creado.
-- `requirements.txt` por crear.
+- `requirements.txt` creado.
 
 ## Fase 2 - Definicion De La Maqueta
 
@@ -53,12 +58,12 @@ Objetivo: establecer medidas reales de trabajo para el prototipo fisico.
 
 Tareas:
 
-- Confirmar medidas del contenedor de 40 pies a escala: `60 x 12 x 13`.
-- Confirmar medidas del contenedor de 20 pies a escala: `30 x 12 x 13`.
-- Medir las cajas fisicas de medicamento.
-- Asignar un ArUco unico a cada caja.
-- Registrar todas las cajas en `datos/cajas.json`.
-- Revisar que las dimensiones del codigo coincidan con la maqueta real.
+- [ ] Confirmar medidas del contenedor de 40 pies a escala: `60 x 12 x 13`.
+- [ ] Confirmar medidas del contenedor de 20 pies a escala: `30 x 12 x 13`.
+- [ ] Medir las cajas fisicas de medicamento.
+- [ ] Asignar un ArUco unico a cada caja.
+- [ ] Registrar todas las cajas en `datos/cajas.json`.
+- [ ] Revisar que las dimensiones del codigo coincidan con la maqueta real.
 
 Resultado esperado:
 
@@ -72,12 +77,12 @@ Objetivo: tener una relacion clara entre marcador, caja y dimensiones.
 
 Tareas:
 
-- Revisar los ArUco disponibles en la carpeta `arucos/`.
-- Decidir cuantos ArUco se usaran en la demostracion.
-- Completar `datos/cajas.json` con todas las cajas reales.
-- Agregar nombre o descripcion de cada caja si se requiere.
-- Validar que no existan IDs ArUco repetidos.
-- Mostrar aviso cuando se detecte un ArUco que no existe en el catalogo.
+- [ ] Revisar los ArUco disponibles en la carpeta `arucos/`.
+- [ ] Decidir cuantos ArUco se usaran en la demostracion.
+- [ ] Completar `datos/cajas.json` con todas las cajas reales.
+- [ ] Agregar nombre o descripcion de cada caja si se requiere.
+- [ ] Validar que no existan IDs ArUco repetidos.
+- [ ] Mostrar aviso cuando se detecte un ArUco que no existe en el catalogo.
 
 Resultado esperado:
 
@@ -90,12 +95,12 @@ Objetivo: hacer mas confiable la captura de cajas durante la demostracion.
 
 Tareas:
 
-- Revisar deteccion actual de ArUco.
-- Evitar registros duplicados.
-- Mostrar claramente que caja fue detectada.
-- Agregar opcion para registrar una caja manualmente si falla la camara.
-- Mostrar mensaje cuando un ArUco no exista en el catalogo.
-- Permitir limpiar la lista de cajas registradas.
+- [ ] Revisar deteccion actual de ArUco.
+- [ ] Evitar registros duplicados.
+- [ ] Mostrar claramente que caja fue detectada.
+- [ ] Agregar opcion para registrar una caja manualmente si falla la camara.
+- [ ] Mostrar mensaje cuando un ArUco no exista en el catalogo.
+- [ ] Permitir limpiar la lista de cajas registradas.
 
 Resultado esperado:
 
@@ -109,12 +114,12 @@ Objetivo: evitar que la camara se abra en una ventana separada de OpenCV y hacer
 
 Tareas:
 
-- Integrar la imagen de la camara dentro de la ventana principal.
-- Reemplazar el ciclo `while True` por `QTimer` o `QThread`.
-- Mantener activa la interfaz mientras la camara detecta cajas.
-- Agregar boton para iniciar escaneo.
-- Agregar boton para detener escaneo.
-- Mostrar estado de la camara en la interfaz.
+- [ ] Integrar la imagen de la camara dentro de la ventana principal.
+- [ ] Reemplazar el ciclo `while True` por `QTimer` o `QThread`.
+- [ ] Mantener activa la interfaz mientras la camara detecta cajas.
+- [ ] Agregar boton para iniciar escaneo.
+- [ ] Agregar boton para detener escaneo.
+- [ ] Mostrar estado de la camara en la interfaz.
 
 Resultado esperado:
 
@@ -128,14 +133,14 @@ Objetivo: mejorar el acomodo de cajas dentro del contenedor.
 
 Tareas:
 
-- Revisar algoritmo actual de `packing/optimizador.py`.
-- Validar colisiones correctamente.
-- Probar diferentes orientaciones de cajas.
-- Reportar cajas colocadas.
-- Reportar cajas que no cupieron.
-- Calcular porcentaje de volumen utilizado.
-- Mejorar acomodo por capas.
-- Agregar pruebas con diferentes combinaciones de cajas.
+- [ ] Revisar algoritmo actual de `packing/optimizador.py`.
+- [ ] Validar colisiones correctamente.
+- [ ] Probar diferentes orientaciones de cajas.
+- [ ] Reportar cajas colocadas.
+- [ ] Reportar cajas que no cupieron.
+- [ ] Calcular porcentaje de volumen utilizado.
+- [ ] Mejorar acomodo por capas.
+- [ ] Agregar pruebas con diferentes combinaciones de cajas.
 
 Resultado esperado:
 
@@ -149,12 +154,12 @@ Objetivo: mostrar el acomodo de forma clara para replicarlo en la maqueta fisica
 
 Tareas:
 
-- Mejorar dibujo del contenedor.
-- Mostrar cajas por capas.
-- Identificar cada caja con numero o ArUco.
-- Mostrar dimensiones de caja seleccionada.
-- Agregar resumen del acomodo.
-- Usar la imagen `imgContenedorConcepto.jpeg` como referencia local del objetivo fisico.
+- [ ] Mejorar dibujo del contenedor.
+- [ ] Mostrar cajas por capas.
+- [ ] Identificar cada caja con numero o ArUco.
+- [ ] Mostrar dimensiones de caja seleccionada.
+- [ ] Agregar resumen del acomodo.
+- [ ] Usar la imagen `imgContenedorConcepto.jpeg` como referencia local del objetivo fisico.
 
 Resultado esperado:
 
@@ -168,13 +173,13 @@ Objetivo: validar el programa con cajas reales.
 
 Tareas:
 
-- Probar con pocas cajas.
-- Probar con muchas cajas.
-- Probar con contenedor `40FT`.
-- Probar con contenedor `20FT`.
-- Verificar deteccion de ArUco con diferentes luces.
-- Ajustar medidas si alguna caja no coincide con la maqueta.
-- Documentar fallos encontrados durante pruebas.
+- [ ] Probar con pocas cajas.
+- [ ] Probar con muchas cajas.
+- [ ] Probar con contenedor `40FT`.
+- [ ] Probar con contenedor `20FT`.
+- [ ] Verificar deteccion de ArUco con diferentes luces.
+- [ ] Ajustar medidas si alguna caja no coincide con la maqueta.
+- [ ] Documentar fallos encontrados durante pruebas.
 
 Resultado esperado:
 
@@ -188,13 +193,13 @@ Objetivo: preparar el proyecto para exposicion academica.
 
 Tareas:
 
-- Preparar explicacion del problema real en zona de previos.
-- Explicar uso de ArUco.
-- Explicar relacion con optimizacion de volumenes.
-- Mostrar flujo completo del programa.
-- Mostrar maqueta funcionando.
-- Documentar limitaciones.
-- Proponer mejoras futuras.
+- [ ] Preparar explicacion del problema real en zona de previos.
+- [ ] Explicar uso de ArUco.
+- [ ] Explicar relacion con optimizacion de volumenes.
+- [ ] Mostrar flujo completo del programa.
+- [ ] Mostrar maqueta funcionando.
+- [ ] Documentar limitaciones.
+- [ ] Proponer mejoras futuras.
 
 Resultado esperado:
 
@@ -205,11 +210,11 @@ Resultado esperado:
 
 Primer bloque de trabajo recomendado:
 
-1. Crear `requirements.txt`.
-2. Completar `datos/cajas.json` con todas las cajas reales de la maqueta.
-3. Mejorar el flujo de camara e interfaz.
-4. Agregar registro manual de cajas.
-5. Mejorar reporte del optimizador.
+- [x] Crear `requirements.txt`.
+- [ ] Completar `datos/cajas.json` con todas las cajas reales de la maqueta.
+- [ ] Mejorar el flujo de camara e interfaz.
+- [ ] Agregar registro manual de cajas.
+- [ ] Mejorar reporte del optimizador.
 
 ## Decisiones Tecnicas Iniciales
 
