@@ -22,13 +22,17 @@ from modelos.caja import Caja
 class SistemaSICCO:
 
 
-    def __init__(self, ventana):
+    def __init__(self, ventana, indice_camara=0):
 
 
         self.ventana = ventana
 
 
-        self.camara = Camera()
+        self.camara = Camera(
+
+            indice_camara
+
+        )
 
 
         self.detector = DetectorAruco()
@@ -297,8 +301,26 @@ def main():
 
 
 
+    indice_camara = 0
+
+    if len(sys.argv) > 1:
+
+        try:
+
+            indice_camara = int(sys.argv[1])
+
+        except ValueError:
+
+            print(
+                "Uso: python main.py [indice_camara]"
+            )
+
+            return
+
+
+
     app = QApplication(
-        sys.argv
+        sys.argv[:1]
     )
 
 
@@ -309,7 +331,9 @@ def main():
 
     sistema = SistemaSICCO(
 
-        ventana
+        ventana,
+
+        indice_camara
 
     )
 

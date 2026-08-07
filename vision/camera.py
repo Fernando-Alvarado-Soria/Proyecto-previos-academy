@@ -5,22 +5,24 @@ import cv2
 class Camera:
 
 
-    def __init__(self):
+    def __init__(self, indice=0):
 
         self.cap = None
+
+        self.indice = indice
 
 
 
     def iniciar(self):
 
 
-        self.cap = cv2.VideoCapture(0)
+        self.cap = cv2.VideoCapture(self.indice)
 
 
         if not self.cap.isOpened():
 
             print(
-                "No se pudo abrir la cámara"
+                f"No se pudo abrir la cámara con índice {self.indice}"
             )
 
             return False
@@ -28,7 +30,7 @@ class Camera:
 
 
         print(
-            "Cámara iniciada"
+            f"Cámara iniciada con índice {self.indice}"
         )
 
 

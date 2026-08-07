@@ -121,6 +121,14 @@ python -m pip install PyQt6 opencv-contrib-python
 python main.py
 ```
 
+Si tienes mas de una camara, puedes indicar el indice de la camara que quieres usar:
+
+```powershell
+python main.py 1
+```
+
+En Windows normalmente `0` es la camara integrada y `1` suele ser la camara USB. Si no funciona, probar con `2` o `3`.
+
 ## Uso Del Programa
 
 - Al ejecutar `python main.py`, se abre la interfaz grafica y la camara.
@@ -201,6 +209,7 @@ sudo apt install libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 l
 Revisar que:
 
 - La webcam este conectada.
+- Si usas camara USB, ejecutar `python main.py 1`. Si no funciona, probar `python main.py 2` o `python main.py 3`.
 - Otra aplicacion no este usando la camara.
 - El sistema tenga permisos para acceder a la camara.
 
