@@ -22,6 +22,50 @@ SICCO busca apoyar ese proceso mediante vision artificial, registro de cajas y o
 - Mostrar el acomodo en una interfaz grafica por capas.
 - Permitir que el acomodo se replique en la maqueta fisica.
 
+## Requerimientos Funcionales
+
+Estos requerimientos describen que debe hacer el sistema. Se marcaran como completados cuando esten implementados y probados.
+
+- [x] RF-01: Permitir seleccionar tipo de contenedor `20FT` o `40FT`.
+- [x] RF-02: Registrar cajas detectadas mediante marcador ArUco.
+- [x] RF-03: Evitar registros duplicados inmediatos de una misma caja.
+- [x] RF-04: Mostrar una lista de cajas registradas.
+- [x] RF-05: Calcular un acomodo de cajas dentro del contenedor.
+- [x] RF-06: Mostrar el acomodo del contenedor por capas.
+- [ ] RF-07: Mostrar la camara dentro de la interfaz principal.
+- [ ] RF-08: Permitir iniciar y detener el escaneo desde la interfaz.
+- [ ] RF-09: Permitir registrar cajas manualmente si falla la camara.
+- [ ] RF-10: Mostrar aviso cuando se detecte un ArUco no registrado en el catalogo.
+- [ ] RF-11: Reportar cajas que no pudieron colocarse dentro del contenedor.
+- [ ] RF-12: Mostrar porcentaje de volumen utilizado.
+- [ ] RF-13: Mostrar resumen final del acomodo.
+- [ ] RF-14: Identificar visualmente cada caja por numero, ArUco o nombre.
+
+## Requerimientos No Funcionales
+
+Estos requerimientos describen condiciones de calidad, instalacion y presentacion del sistema.
+
+- [x] RNF-01: El proyecto debe ejecutarse en un entorno virtual de Python.
+- [x] RNF-02: El entorno virtual no debe subirse al repositorio.
+- [x] RNF-03: El proyecto debe contar con guia de instalacion para Linux y Windows.
+- [x] RNF-04: Las dependencias deben estar declaradas en `requirements.txt`.
+- [ ] RNF-05: La interfaz debe mantenerse activa sin bloquearse durante el escaneo.
+- [ ] RNF-06: El sistema debe poder demostrarse aunque la camara falle.
+- [ ] RNF-07: El flujo debe ser entendible para una presentacion academica.
+- [ ] RNF-08: El acomodo digital debe poder replicarse en la maqueta fisica.
+- [ ] RNF-09: El codigo debe mantenerse organizado por responsabilidades: modelos, vision, UI y optimizacion.
+
+## Datos Necesarios Para Avanzar
+
+Estos datos dependen de la maqueta fisica y deben confirmarse antes de completar el catalogo final.
+
+- [ ] Medidas finales del contenedor `20FT` de la maqueta.
+- [ ] Lista de cajas fisicas que se usaran en la demostracion.
+- [ ] Largo, ancho y alto de cada caja fisica.
+- [ ] ArUco asignado a cada caja fisica.
+- [ ] Cantidad de cajas que se escanearan en la prueba principal.
+- [ ] Definir si algunas cajas pueden repetirse o si cada caja tendra un ArUco unico.
+
 ## Fase 1 - Preparacion Del Proyecto
 
 Objetivo: dejar el proyecto listo para que cualquier integrante pueda instalarlo y ejecutarlo desde cero.
@@ -37,7 +81,7 @@ Tareas:
 - [x] Crear `README.md` con guia de instalacion en Linux y Windows.
 - [x] Crear `requirements.txt` con dependencias de Python.
 - [x] Verificar ejecucion de `python main.py`.
-- [ ] Verificar prueba del optimizador con `python prueba_optimizador.py`.
+- [x] Verificar prueba del optimizador con `python prueba_optimizador.py`.
 
 Resultado esperado:
 
@@ -51,6 +95,8 @@ Estado actual:
 - `.gitignore` creado.
 - `README.md` creado.
 - `requirements.txt` creado.
+- `main.py` ejecutado correctamente en entorno virtual.
+- `prueba_optimizador.py` ejecutado correctamente en entorno virtual.
 
 ## Fase 2 - Definicion De La Maqueta
 
@@ -58,7 +104,7 @@ Objetivo: establecer medidas reales de trabajo para el prototipo fisico.
 
 Tareas:
 
-- [ ] Confirmar medidas del contenedor de 40 pies a escala: `60 x 12 x 13`.
+- [x] Confirmar medidas del contenedor de 40 pies a escala: `60 x 12 x 13`.
 - [ ] Confirmar medidas del contenedor de 20 pies a escala: `30 x 12 x 13`.
 - [ ] Medir las cajas fisicas de medicamento.
 - [ ] Asignar un ArUco unico a cada caja.
@@ -77,17 +123,24 @@ Objetivo: tener una relacion clara entre marcador, caja y dimensiones.
 
 Tareas:
 
-- [ ] Revisar los ArUco disponibles en la carpeta `arucos/`.
+- [x] Revisar los ArUco disponibles en la carpeta `arucos/`.
 - [ ] Decidir cuantos ArUco se usaran en la demostracion.
 - [ ] Completar `datos/cajas.json` con todas las cajas reales.
 - [ ] Agregar nombre o descripcion de cada caja si se requiere.
-- [ ] Validar que no existan IDs ArUco repetidos.
+- [x] Validar que no existan IDs ArUco repetidos.
 - [ ] Mostrar aviso cuando se detecte un ArUco que no existe en el catalogo.
 
 Resultado esperado:
 
 - El catalogo representa fielmente las cajas de la maqueta.
 - La deteccion por camara puede convertirse en una caja con dimensiones utiles para el optimizador.
+
+Estado actual:
+
+- ArUco disponibles en imagenes: `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`.
+- ArUco registrados en `datos/cajas.json`: `10`, `11`, `12`, `13`.
+- Pendiente registrar dimensiones para ArUco `14`, `15`, `16` y `17` si se usaran en la maqueta.
+- No se detectaron IDs ArUco repetidos en el catalogo actual.
 
 ## Fase 4 - Mejora Del Registro De Cajas
 
@@ -133,7 +186,7 @@ Objetivo: mejorar el acomodo de cajas dentro del contenedor.
 
 Tareas:
 
-- [ ] Revisar algoritmo actual de `packing/optimizador.py`.
+- [x] Revisar algoritmo actual de `packing/optimizador.py`.
 - [ ] Validar colisiones correctamente.
 - [ ] Probar diferentes orientaciones de cajas.
 - [ ] Reportar cajas colocadas.
@@ -147,6 +200,13 @@ Resultado esperado:
 - El sistema genera un acomodo mas confiable.
 - El usuario sabe que cajas caben y cuales no.
 - El acomodo se puede explicar como optimizacion de volumen.
+
+Estado actual:
+
+- El optimizador ordena las cajas por volumen de mayor a menor.
+- Intenta ubicar cajas en puntos disponibles dentro del contenedor.
+- Revisa limites del contenedor y colisiones basicas.
+- Pendiente mejorar reporte, rotaciones, cajas no colocadas y porcentaje de volumen usado.
 
 ## Fase 7 - Visualizacion Del Contenedor
 
